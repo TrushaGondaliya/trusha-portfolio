@@ -1,155 +1,518 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Trusha Gondaliya | Laravel & React Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* --- CUSTOM MONOCHROME PALETTE & RESET --- */
+      :root {
+        --primary-color: #4f46e5; /* Indigo/Professional Purple */
+        --accent-color: #fbbf24; /* Amber/Yellow for highlight (used only subtly) */
+        --text-main: #1f2937;
+        --text-sub: #6b7280;
+        --bg-body: #f9fafb; /* Off-White/Very Light Gray */
+      }
 
-<body class="bg-gray-100 text-gray-800 font-[Poppins]">
+      body {
+        font-family: inherit;
+        background-color: var(--bg-body);
+        color: var(--text-main);
+        line-height: 1.6;
+      }
 
-    <!-- Hero Section -->
-    <section class="min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-br from-purple-600 to-indigo-700 text-white px-6">
-        <h1 class="text-5xl font-bold mb-4">Hi, I'm <span class="text-yellow-300">Trusha Gondaliya</span></h1>
-        <p class="text-xl mb-6">Laravel | React | Full Stack Developer</p>
-        <p class="max-w-2xl text-lg mb-6">
-            A passionate full-stack developer with 3 years of experience building scalable applications, 
-            REST APIs, admin dashboards, subscription systems, and secure login infrastructures.
-        </p>
-        <a href="#projects" class="px-6 py-3 text-lg bg-white text-purple-700 font-semibold rounded-lg shadow-lg hover:bg-yellow-300 transition">
+      /* Scrollbar styling */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--primary-color);
+        border-radius: 3px;
+      }
+
+      /* Active nav link highlight: Simple text color change with a bold border */
+      nav a.active {
+        color: var(--primary-color);
+        font-weight: 700;
+        border-left: 4px solid var(--primary-color);
+        padding-left: 1rem;
+      }
+
+      /* Tech Tags: Simple text with subtle border */
+      .tech-tag {
+        color: var(--primary-color);
+        font-weight: 600;
+        padding: 3px 8px;
+        border: 1px solid var(--primary-color);
+        border-radius: 4px;
+        font-size: 0.8rem;
+      }
+
+      /* Simple fade-in animation */
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fade-in {
+        animation: fadeIn 0.8s ease forwards;
+      }
+      .delay-100 {
+        animation-delay: 0.1s;
+      }
+      .delay-200 {
+        animation-delay: 0.2s;
+      }
+      .delay-300 {
+        animation-delay: 0.3s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex min-h-screen">
+      <aside
+        class="hidden md:flex flex-col w-72 bg-white text-gray-800 sticky top-0 h-screen p-8 shadow-lg border-r border-gray-100"
+      >
+        <div class="flex flex-col items-center mb-8">
+          <h1 class="text-2xl font-extrabold mb-1 text-gray-900">
+            Trusha Gondaliya
+          </h1>
+          <p
+            class="text-sm font-medium mb-8 text-center tracking-wide text-gray-500"
+          >
+            Laravel & React Developer
+          </p>
+
+          <div class="flex space-x-5 mb-10 text-gray-400">
+            <a
+              href="https://www.linkedin.com/in/gondaliya-trusha-8851571b0/"
+              target="_blank"
+              aria-label="LinkedIn"
+              class="hover:text-primary-color transition"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M4.98 3.5a2.5 2.5 0 11-.001 5.001A2.5 2.5 0 014.98 3.5zM3 8.75h3.96V21H3V8.75zM8.17 8.75h3.79v1.67h.05c.53-1.01 1.83-2.08 3.77-2.08 4.04 0 4.79 2.67 4.79 6.14V21h-4v-6.03c0-1.44-.03-3.28-2-3.28-2 0-2.3 1.56-2.3 3.17V21h-4V8.75z"
+                />
+              </svg>
+            </a>
+            <a
+              href="mailto:trushagondaliya30@gmail.com"
+              aria-label="Email"
+              class="hover:text-primary-color transition"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M20 4H4c-1.104 0-2 .896-2 2v12c0 1.104.896 2 2 2h16c1.104 0 2-.896 2-2V6c0-1.104-.896-2-2-2zm0 2v.511l-8 4.995-8-4.995V6h16zm-16 12V9.263l7.396 4.615a.75.75 0 00.808 0L20 9.262V18H4z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <nav
+          id="sidebar-nav"
+          class="flex flex-col space-y-3 text-lg font-medium w-full tracking-wide"
+        >
+          <a
+            href="#about"
+            class="text-gray-600 hover:text-primary-color transition p-2 rounded-lg scroll-link"
+            >About Me</a
+          >
+          <a
+            href="#skills"
+            class="text-gray-600 hover:text-primary-color transition p-2 rounded-lg scroll-link"
+            >Skills</a
+          >
+          <a
+            href="#projects"
+            class="text-gray-600 hover:text-primary-color transition p-2 rounded-lg scroll-link"
+            >Projects</a
+          >
+          <a
+            href="#experience"
+            class="text-gray-600 hover:text-primary-color transition p-2 rounded-lg scroll-link"
+            >Experience</a
+          >
+          <a
+            href="#contact"
+            class="text-gray-600 hover:text-primary-color transition p-2 rounded-lg scroll-link"
+            >Contact</a
+          >
+
+          <a
+            href="Trusha_Gondaliya_Laravel_SE.pdf"
+            target="_blank"
+            download
+            class="mt-8 bg-white text-primary-color border border-primary-color rounded-lg px-4 py-3 text-center font-bold hover:bg-indigo-50 transition shadow-lg text-sm"
+            >Download Resume</a
+          >
+        </nav>
+      </aside>
+
+      <main class="flex-1 p-8 md:p-12 max-w-5xl mx-auto">
+        <section id="hero" class="pt-8 md:pt-16 mb-20">
+          <h2
+            class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight text-gray-900 animate-fade-in"
+          >
+            Hi, I'm <span class="text-primary-color">Trusha Gondaliya</span>
+          </h2>
+          <p
+            class="text-xl md:text-2xl font-medium text-gray-500 mb-8 animate-fade-in delay-100"
+          >
+            Laravel | React | Full Stack Developer
+          </p>
+          <p
+            class="max-w-4xl text-lg text-gray-600 mb-10 leading-relaxed animate-fade-in delay-200"
+          >
+            A dedicated full-stack developer with
+            <strong>3+ years of experience</strong> building scalable
+            applications, designing robust REST APIs, implementing subscription
+            systems (Stripe), and securing login infrastructures
+            (<strong>2FA</strong>).
+          </p>
+          <a
+            href="#projects"
+            class="inline-block bg-white text-primary-color font-bold px-10 py-4 rounded-full shadow-lg hover:bg-indigo-50 transition duration-300 animate-fade-in delay-300"
+          >
             View My Work
-        </a>
-    </section>
+          </a>
+        </section>
 
-    <!-- About -->
-    <section class="max-w-5xl mx-auto py-16 px-6">
-        <h2 class="text-3xl font-bold mb-6 text-center">About Me</h2>
-        <p class="text-lg leading-7 text-center">
-            I am a Laravel & React Developer with hands-on experience in backend development,
-            API integrations, Stripe billing, 2FA security, and scalable architecture building.
-            I have worked on enterprise-level systems like 
-            <b>BIMS (Property Management System)</b>, <b>Artchain</b>, and <b>CI Platform</b>.
-            I love solving complex problems, optimizing performance, and creating clean, 
-            maintainable code.
-        </p>
-    </section>
+        <div class="h-px bg-gray-200 my-10"></div>
 
-    <!-- Skills -->
-    <section class="bg-white py-16 px-6">
-        <h2 class="text-3xl font-bold mb-10 text-center">Technical Skills</h2>
+        <section id="about" class="mb-20 pt-16 -mt-16">
+          <h3
+            class="text-4xl font-bold mb-8 border-b-4 border-primary-color text-gray-900 inline-block pb-2"
+          >
+            About Me
+          </h3>
+          <p
+            class="text-lg text-gray-700 leading-relaxed bg-white p-6 rounded-lg shadow-sm border-l-4 border-primary-color"
+          >
+            I am a Software Engineer specializing in <strong>Laravel</strong> and <strong>React</strong>, with
+            over 3 years of experience building scalable backend systems,
+            high-performance REST APIs, secure authentication flows, and modern
+            web interfaces.<br><br>
+            I enjoy solving complex engineering challenges —
+            from reducing API response times and optimizing database performance
+            to implementing secure TOTP-based 2FA and building reliable Stripe
+            billing systems used by thousands of users. <br><br>
+            My work focuses on clean architecture, maintainability, and performance tuning. I enjoy
+            collaborating with teams, breaking down business requirements, and
+            delivering solutions that are fast, stable, and user-friendly. I’m
+            passionate about learning, improving, and building applications that
+            genuinely help people.
+          </p>
+        </section>
 
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div class="h-px bg-gray-200 my-10"></div>
 
-            <div class="p-6 bg-gray-50 rounded-xl shadow">
-                <h3 class="font-bold text-xl mb-2">Languages & Databases</h3>
-                <p>PHP, JavaScript, MySQL</p>
+        <section id="skills" class="mb-20 pt-16 -mt-16">
+          <h3
+            class="text-4xl font-bold mb-12 border-b-4 border-primary-color text-gray-900 inline-block pb-2"
+          >
+            Technical Skills
+          </h3>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl"
+          >
+            <div
+              class="bg-white p-6 rounded-xl shadow-md border border-gray-100"
+            >
+              <h4 class="font-bold text-xl mb-4 text-primary-color">
+                Backend & APIs
+              </h4>
+              <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
+                <li><strong>Laravel :</strong> Strong framework proficiency</li>
+                <li><strong>PHP :</strong> Core development and maintenance</li>
+                <li>
+                  <strong>REST APIs:</strong> Design, development, and secure
+                  implementation
+                </li>
+                <li>
+                  <strong>MySQL:</strong> Database design and optimization
+                </li>
+              </ul>
             </div>
 
-            <div class="p-6 bg-gray-50 rounded-xl shadow">
-                <h3 class="font-bold text-xl mb-2">Frameworks</h3>
-                <p>Laravel, CodeIgniter, React, jQuery</p>
+            <div
+              class="bg-white p-6 rounded-xl shadow-md border border-gray-100"
+            >
+              <h4 class="font-bold text-xl mb-4 text-primary-color">
+                Frontend
+              </h4>
+              <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
+                <li>
+                  <strong>React.js :</strong> Component-based UI development
+                </li>
+                <li><strong>JavaScript :</strong> Modern ES6+ syntax</li>
+                <li>
+                  <strong>Tailwind CSS/Bootstrap:</strong> Utility-first styling
+                </li>
+                <li>
+                  <strong>HTML/CSS:</strong> Responsive design fundamentals
+                </li>
+              </ul>
             </div>
 
-            <div class="p-6 bg-gray-50 rounded-xl shadow">
-                <h3 class="font-bold text-xl mb-2">Frontend</h3>
-                <p>React.js, Tailwind CSS, Bootstrap, Component-Based UI</p>
+            <div
+              class="bg-white p-6 rounded-xl shadow-md border border-gray-100"
+            >
+              <h4 class="font-bold text-xl mb-4 text-primary-color">
+                DevOps & Integrations
+              </h4>
+              <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
+                <li>
+                  <strong>Stripe:</strong> Subscription and billing workflows
+                </li>
+                <li>
+                  <strong>2FA & Security:</strong> Implementation and management
+                </li>
+                <li>
+                  <strong>Git/GitHub:</strong> Version control and collaboration
+                </li>
+                <li><strong>FCM:</strong> Push notification integration</li>
+              </ul>
             </div>
+          </div>
+        </section>
 
-            <div class="p-6 bg-gray-50 rounded-xl shadow">
-                <h3 class="font-bold text-xl mb-2">API & Integrations</h3>
-                <p>REST APIs, Stripe Subscription, FCM, 2FA, Laravel Passport</p>
+        <div class="h-px bg-gray-200 my-10"></div>
+
+        <section id="projects" class="mb-20 pt-16 -mt-16">
+          <h3
+            class="text-4xl font-bold mb-12 border-b-4 border-primary-color text-gray-900 inline-block pb-2"
+          >
+            Projects
+          </h3>
+          <div class="grid md:grid-cols-2 gap-8 max-w-6xl">
+            <article
+              class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition duration-300 relative border border-gray-200"
+            >
+              <h4 class="text-2xl font-semibold mb-3 text-gray-900">
+                BIMS – Property Management System
+              </h4>
+              <p class="font-semibold mb-3 text-gray-500">
+                Laravel + CodeIgniter
+              </p>
+              <ul
+                class="list-disc list-inside text-gray-700 leading-relaxed space-y-1 pl-4"
+              >
+                <li>Integrated Stripe subscription & auto-renew workflow.</li>
+                <li>Implemented advanced 2FA authentication infrastructure.</li>
+                <li>
+                  Optimized performance from
+                  <strong>10 seconds to 2.5 seconds</strong>.
+                </li>
+              </ul>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="tech-tag">Laravel</span>
+                <span class="tech-tag">CodeIgniter</span>
+                <span class="tech-tag">Stripe</span>
+              </div>
+            </article>
+
+            <article
+              class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition duration-300 relative border border-gray-200"
+            >
+              <h4 class="text-2xl font-semibold mb-3 text-gray-900">
+                Artchain – QR Payment System
+              </h4>
+              <p class="font-semibold mb-3 text-gray-500">Laravel</p>
+              <ul
+                class="list-disc list-inside text-gray-700 leading-relaxed space-y-1 pl-4"
+              >
+                <li>
+                  Developed QR code generation for GPay payments integration.
+                </li>
+                <li>
+                  Created custom offline payment handling with email workflow.
+                </li>
+                <li>
+                  Designed and implemented the core Laravel MVC architecture.
+                </li>
+              </ul>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="tech-tag">Laravel</span>
+                <span class="tech-tag">QR Code</span>
+              </div>
+            </article>
+
+            <article
+              class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition duration-300 relative border border-gray-200"
+            >
+              <h4 class="text-2xl font-semibold mb-3 text-gray-900">
+                CI Platform – Multi-Step Platform
+              </h4>
+              <p class="font-semibold mb-3 text-gray-500">Laravel + React</p>
+              <ul
+                class="list-disc list-inside text-gray-700 leading-relaxed space-y-1 pl-4"
+              >
+                <li>Utilized React for dynamic Story Management components.</li>
+                <li>
+                  Built user onboarding with multi-step verification forms.
+                </li>
+                <li>
+                  Implemented an Admin panel with robust role-based access
+                  control.
+                </li>
+              </ul>
+              <div class="mt-4 flex flex-wrap gap-2">
+                <span class="tech-tag">Laravel</span>
+                <span class="tech-tag">React</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <div class="h-px bg-gray-200 my-10"></div>
+
+        <section id="experience" class="mb-20 pt-16 -mt-16 max-w-4xl mx-auto">
+          <h3
+            class="text-4xl font-bold mb-12 border-b-4 border-primary-color text-gray-900 inline-block pb-2"
+          >
+            Experience
+          </h3>
+
+          <div class="relative border-l-4 border-primary-color pl-8 space-y-12">
+            <article
+              class="relative bg-white p-6 rounded-xl shadow-lg border border-gray-200"
+            >
+              <span
+                class="absolute -left-3 top-1 bg-white w-6 h-6 rounded-full border-4 border-primary-color shadow-xl"
+              ></span>
+              <h4 class="text-2xl font-semibold text-primary-color mb-1">
+                Software Engineer – Tatvasoft
+              </h4>
+              <time class="block mb-4 text-gray-600 font-semibold"
+                >June 2023 – Oct 2025</time
+              >
+              <ul
+                class="list-disc ml-6 text-gray-700 leading-relaxed space-y-2"
+              >
+                <li>
+                  Built and maintained enterprise-level systems using
+                  <strong>Laravel, React & CodeIgniter</strong>.
+                </li>
+                <li>
+                  Designed secure API layers with
+                  <strong>Passport, 2FA, and role-based access</strong>.
+                </li>
+                <li>
+                  <strong>Improved app performance (10s → 2.5s)</strong> using
+                  caching & optimized database queries.
+                </li>
+                <li>
+                  Integrated complex
+                  <strong>Stripe subscription models</strong> (billing portal,
+                  webhooks, trials).
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <div class="h-px bg-gray-200 my-10"></div>
+
+        <section id="contact" class="pt-16 -mt-16">
+          <div
+            class="bg-white text-gray-900 rounded-xl p-12 text-center max-w-4xl mx-auto shadow-xl border border-gray-200"
+          >
+            <h3 class="text-4xl font-bold mb-8 text-primary-color">
+              Let's Connect
+            </h3>
+            <div class="flex flex-col md:flex-row justify-center gap-8 mb-10">
+              <p class="text-xl font-medium">
+                Email:
+                <a
+                  href="mailto:trushagondaliya30@gmail.com"
+                  class="underline hover:text-primary-color transition"
+                  >trushagondaliya30@gmail.com</a
+                >
+              </p>
+              <p class="text-xl font-medium">
+                Phone:
+                <a
+                  href="tel:+917435991877"
+                  class="underline hover:text-primary-color transition"
+                  >+91 7435991877</a
+                >
+              </p>
             </div>
+            <a
+              href="Trusha_Gondaliya_Laravel_SE.pdf"
+              target="_blank"
+              download
+              class="inline-block bg-white text-primary-color border border-primary-color px-10 py-4 rounded-full font-bold hover:bg-indigo-50 transition shadow-lg"
+              >Download Full Resume</a
+            >
+          </div>
+        </section>
+      </main>
+    </div>
 
-            <div class="p-6 bg-gray-50 rounded-xl shadow">
-                <h3 class="font-bold text-xl mb-2">Security</h3>
-                <p>2FA, Role-Based Access, API Authentication</p>
-            </div>
+    <script>
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll(".scroll-link");
 
-            <div class="p-6 bg-gray-50 rounded-xl shadow">
-                <h3 class="font-bold text-xl mb-2">Tools & Soft Skills</h3>
-                <p>Git, GitHub, Bitbucket, Jira, Communication, Client Handling</p>
-            </div>
-        </div>
-    </section>
+      const setActiveLink = (id) => {
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === "#" + id) {
+            link.classList.add("active");
+          }
+        });
+      };
 
-    <!-- Experience -->
-    <section class="py-16 px-6 bg-gray-100">
-        <h2 class="text-3xl font-bold text-center mb-10">Experience</h2>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => {
+                const activeSectionId = entry.target.id;
+                if (activeSectionId === "hero") {
+                  setActiveLink("about");
+                } else {
+                  setActiveLink(activeSectionId);
+                }
+              }, 50);
+            }
+          });
+        },
+        {
+          rootMargin: "-30% 0% -60% 0%",
+        }
+      );
 
-        <div class="max-w-5xl mx-auto grid gap-8">
+      sections.forEach((section) => {
+        observer.observe(section);
+      });
 
-            <!-- Tatvasoft Experience -->
-            <div class="bg-white rounded-xl shadow-lg p-6">
-                <h3 class="text-2xl font-bold mb-2">Software Engineer – Tatvasoft</h3>
-                <p class="text-gray-600 mb-4">June 2023 – Oct 2025</p>
+      // Smooth scroll for clicks
+      navLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute("href").substring(1);
+          const target = document.querySelector(link.getAttribute("href"));
 
-                <ul class="list-disc ml-5 text-gray-700 leading-7">
-                    <li>Built enterprise-level systems using Laravel, React & CodeIgniter.</li>
-                    <li>Worked on secure API layers with Passport, 2FA, role-based access.</li>
-                    <li>Improved app performance (10s → 2.5s) using caching & optimized queries.</li>
-                    <li>Integrated Stripe subscription models (billing portal, webhooks, trials).</li>
-                    <li>Developed FCM push notification system with daily metrics.</li>
-                    <li>Developed React-based admin panels and dynamic dashboard UI.</li>
-                    <li>Created scheduled PDF automation workflows with custom templates.</li>
-                </ul>
-            </div>
+          setActiveLink(targetId);
+          target.scrollIntoView({ behavior: "smooth" });
+        });
+      });
 
-        </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="py-16 px-6 bg-gray-50">
-        <h2 class="text-3xl font-bold text-center mb-12">Projects</h2>
-
-        <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-
-            <!-- BIMS -->
-            <div class="bg-white rounded-xl shadow-lg p-6">
-                <h3 class="text-2xl font-bold mb-3">BIMS – Property Management System</h3>
-                <p class="mb-3 font-semibold">Laravel + CodeIgniter</p>
-                <ul class="list-disc ml-5 text-gray-700 leading-7">
-                    <li>FCM push notifications with daily tracking metrics.</li>
-                    <li>Stripe subscription & auto-renew workflow.</li>
-                    <li>Advanced 2FA authentication infrastructure.</li>
-                    <li>PDF generation with scheduled automation.</li>
-                    <li>Optimized performance (10s → 2.5s).</li>
-                </ul>
-            </div>
-
-            <!-- Artchain -->
-            <div class="bg-white rounded-xl shadow-lg p-6">
-                <h3 class="text-2xl font-bold mb-3">Artchain – QR Payment System</h3>
-                <p class="mb-3 font-semibold">Laravel</p>
-                <ul class="list-disc ml-5 text-gray-700 leading-7">
-                    <li>QR code generation for GPay payments.</li>
-                    <li>Custom offline payment handling with email workflow.</li>
-                    <li>Designed Laravel architecture + MVC structure.</li>
-                </ul>
-            </div>
-
-            <!-- CI Platform -->
-            <div class="bg-white rounded-xl shadow-lg p-6">
-                <h3 class="text-2xl font-bold mb-3">CI Platform – Multi-Step Platform</h3>
-                <p class="mb-3 font-semibold">Laravel + React</p>
-                <ul class="list-disc ml-5 text-gray-700 leading-7">
-                    <li>React used for Story Management & dynamic components.</li>
-                    <li>User onboarding with multi-step verification.</li>
-                    <li>Admin panel with role-based access control.</li>
-                </ul>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="bg-indigo-700 text-white py-16 px-6 text-center">
-        <h2 class="text-3xl font-bold mb-6">Contact Me</h2>
-        <p class="text-lg mb-4">Email: <b>trushagondaliya30@gmail.com</b></p>
-        <p class="text-lg mb-4">Phone: <b>7435991877</b></p>
-        <a href="Trusha_Gondaliya_Laravel_SE.pdf" target="_blank" download class="px-6 py-3 bg-white text-purple-700 rounded-lg shadow-lg font-semibold hover:bg-yellow-300 transition">Download Resume</a>
-    </section>
-
-</body>
+      // Initial active state set for 'About Me' on load
+      setActiveLink("about");
+    </script>
+  </body>
 </html>
