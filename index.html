@@ -19,6 +19,25 @@
         --bg-body: #f9fafb; /* Off-White/Very Light Gray */
       }
 
+      .primary-btn {
+        display: inline-block;
+        background-color: #4f46e5; /* primary color */
+        color: #ffffff;
+        font-weight: bold;
+        padding: 12px 30px;
+        border-radius: 9999px;
+        text-decoration: none;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        border: 2px solid #4f46e5;
+        transition: all 0.3s ease;
+      }
+
+      .primary-btn:hover {
+        background: #fff;
+        transform: translateY(-2px);
+        color: var(--primary-color);
+      }
+
       body {
         font-family: inherit;
         background-color: var(--bg-body);
@@ -144,6 +163,11 @@
             class="text-gray-600 hover:text-primary-color transition p-2 rounded-lg scroll-link"
             >Experience</a
           >
+           <a
+            href="#education"
+            class="text-gray-600 hover:text-primary-color transition p-2 rounded-lg scroll-link"
+            >Education</a
+          >
           <a
             href="#contact"
             class="text-gray-600 hover:text-primary-color transition p-2 rounded-lg scroll-link"
@@ -154,7 +178,7 @@
             href="Trusha_Gondaliya_Laravel_SE.pdf"
             target="_blank"
             download
-            class="mt-8 bg-white text-primary-color border border-primary-color rounded-lg px-4 py-3 text-center font-bold hover:bg-indigo-50 transition shadow-lg text-sm"
+            class="primary-btn text-sm "
             >Download Resume</a
           >
         </nav>
@@ -181,12 +205,7 @@
             systems (Stripe), and securing login infrastructures
             (<strong>2FA</strong>).
           </p>
-          <a
-            href="#projects"
-            class="inline-block bg-white text-primary-color font-bold px-10 py-4 rounded-full shadow-lg hover:bg-indigo-50 transition duration-300 animate-fade-in delay-300"
-          >
-            View My Work
-          </a>
+          <a href="#projects" class="primary-btn"> View My Work </a>
         </section>
 
         <div class="h-px bg-gray-200 my-10"></div>
@@ -200,93 +219,181 @@
           <p
             class="text-lg text-gray-700 leading-relaxed bg-white p-6 rounded-lg shadow-sm border-l-4 border-primary-color"
           >
-            I am a Software Engineer specializing in <strong>Laravel</strong> and <strong>React</strong>, with
-            over 3 years of experience building scalable backend systems,
+            I am a Software Engineer specializing in
+            <strong>Laravel</strong> and <strong>React</strong>, with over 3
+            years of experience building scalable backend systems,
             high-performance REST APIs, secure authentication flows, and modern
-            web interfaces.<br><br>
-            I enjoy solving complex engineering challenges —
-            from reducing API response times and optimizing database performance
-            to implementing secure TOTP-based 2FA and building reliable Stripe
-            billing systems used by thousands of users. <br><br>
-            My work focuses on clean architecture, maintainability, and performance tuning. I enjoy
-            collaborating with teams, breaking down business requirements, and
-            delivering solutions that are fast, stable, and user-friendly. I’m
-            passionate about learning, improving, and building applications that
-            genuinely help people.
+            web interfaces.<br /><br />
+            I enjoy solving complex engineering challenges - from reducing API
+            response times and optimizing database performance to implementing
+            secure TOTP-based 2FA and building reliable Stripe billing systems
+            used by thousands of users. <br /><br />
+            My work focuses on clean architecture, maintainability, and
+            performance tuning. I enjoy collaborating with teams, breaking down
+            business requirements, and delivering solutions that are fast,
+            stable, and user-friendly. I’m passionate about learning, improving,
+            and building applications that genuinely help people.
           </p>
         </section>
 
         <div class="h-px bg-gray-200 my-10"></div>
 
         <section id="skills" class="mb-20 pt-16 -mt-16">
-          <h3
-            class="text-4xl font-bold mb-12 border-b-4 border-primary-color text-gray-900 inline-block pb-2"
-          >
-            Technical Skills
-          </h3>
-          <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl"
-          >
-            <div
-              class="bg-white p-6 rounded-xl shadow-md border border-gray-100"
-            >
-              <h4 class="font-bold text-xl mb-4 text-primary-color">
-                Backend & APIs
-              </h4>
-              <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
-                <li><strong>Laravel :</strong> Strong framework proficiency</li>
-                <li><strong>PHP :</strong> Core development and maintenance</li>
-                <li>
-                  <strong>REST APIs:</strong> Design, development, and secure
-                  implementation
-                </li>
-                <li>
-                  <strong>MySQL:</strong> Database design and optimization
-                </li>
-              </ul>
-            </div>
+  <h3
+    class="text-4xl font-bold mb-12 border-b-4 border-primary-color text-gray-900 inline-block pb-2"
+  >
+    Technical Skills
+  </h3>
 
-            <div
-              class="bg-white p-6 rounded-xl shadow-md border border-gray-100"
-            >
-              <h4 class="font-bold text-xl mb-4 text-primary-color">
-                Frontend
-              </h4>
-              <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
-                <li>
-                  <strong>React.js :</strong> Component-based UI development
-                </li>
-                <li><strong>JavaScript :</strong> Modern ES6+ syntax</li>
-                <li>
-                  <strong>Tailwind CSS/Bootstrap:</strong> Utility-first styling
-                </li>
-                <li>
-                  <strong>HTML/CSS:</strong> Responsive design fundamentals
-                </li>
-              </ul>
-            </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl">
 
-            <div
-              class="bg-white p-6 rounded-xl shadow-md border border-gray-100"
-            >
-              <h4 class="font-bold text-xl mb-4 text-primary-color">
-                Integrations
-              </h4>
-              <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
-                <li>
-                  <strong>Stripe:</strong> Subscription and billing workflows
-                </li>
-                <li>
-                  <strong>2FA & Security:</strong> Implementation and management
-                </li>
-                <li>
-                  <strong>Git/GitHub:</strong> Version control and collaboration
-                </li>
-                <li><strong>FCM:</strong> Push notification integration</li>
-              </ul>
-            </div>
-          </div>
-        </section>
+    <!-- Backend -->
+    <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+      <h4 class="font-bold text-xl mb-4 text-primary-color flex items-center gap-2">
+        <!-- Server Icon -->
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        Backend & APIs
+      </h4>
+
+      <ul class="space-y-3 text-gray-700">
+        <li class="flex items-center gap-3">
+          <!-- Laravel -->
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg"
+               class="w-5 h-5" alt="Laravel" />
+          <span><strong>Laravel</strong> - Strong framework proficiency</span>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <!-- PHP -->
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
+               class="w-5 h-5" alt="PHP" />
+          <span><strong>PHP</strong> - Core development & maintenance</span>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <!-- API -->
+          <svg class="w-5 h-5 text-primary-color" fill="none" stroke="currentColor"
+            stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+          <span><strong>REST APIs</strong> - Secure & scalable</span>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <!-- MySQL -->
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+               class="w-5 h-5" alt="MySQL" />
+          <span><strong>MySQL</strong> - Design & optimization</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Frontend -->
+    <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+      <h4 class="font-bold text-xl mb-4 text-primary-color flex items-center gap-2">
+        <!-- Code Icon -->
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M16 18l6-6-6-6M8 6l-6 6 6 6" />
+        </svg>
+        Frontend
+      </h4>
+
+      <ul class="space-y-3 text-gray-700">
+        <li class="flex items-center gap-3">
+          <!-- React -->
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+               class="w-5 h-5" alt="React" />
+          <span><strong>React.js</strong> - Component-based UI</span>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <!-- JS -->
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+               class="w-5 h-5" alt="JavaScript" />
+          <span><strong>JavaScript</strong> - ES6+</span>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <!-- HTML -->
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+               class="w-5 h-5" alt="HTML" />
+          <span><strong>HTML / CSS</strong> - Responsive layouts</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Integrations -->
+    <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+      <h4 class="font-bold text-xl mb-4 text-primary-color flex items-center gap-2">
+        <!-- Plug Icon -->
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M9 12h6m-3-3v6m7-6a4 4 0 01-4 4H8a4 4 0 01-4-4V5h16v4z" />
+        </svg>
+        Integrations
+      </h4>
+
+      <ul class="space-y-3 text-gray-700">
+        <li class="flex items-center gap-3">
+          <!-- Stripe -->
+          <svg
+            class="w-5 h-5 text-primary-color"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M17 9V7a5 5 0 00-10 0v2M5 11h14v10H5V11z"
+            />
+          </svg>
+          <span><strong>Stripe</strong> - Subscriptions & billing</span>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <!-- Security -->
+           <svg class="w-5 h-5 text-primary-color" viewBox="0 0 24 24" fill="currentColor">
+    <path
+      fill-rule="evenodd"
+      d="M12 2a1 1 0 01.447.105l7 3.5A1 1 0 0120 6.5v5.528a9 9 0 01-7.447 8.872l-.106.02a1 1 0 01-.894 0l-.106-.02A9 9 0 014 12.028V6.5a1 1 0 01.553-.895l7-3.5A1 1 0 0112 2zm3.707 8.207a1 1 0 00-1.414-1.414L11 12.086l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+      clip-rule="evenodd"
+    />
+  </svg>
+          <span><strong>2FA & Security</strong> - Authentication & access</span>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <!-- Git -->
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+               class="w-5 h-5" alt="Git" />
+          <span><strong>Git / GitHub</strong> - Version control</span>
+        </li>
+
+        <li class="flex items-center gap-3">
+          <!-- Notification -->
+          <svg class="w-5 h-5 text-primary-color" fill="none" stroke="currentColor"
+            stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M15 17h5l-1.4-1.4A2 2 0 0118 14.2V11a6 6 0 10-12 0v3.2a2 2 0 01-.6 1.4L4 17h5" />
+          </svg>
+          <span><strong>FCM</strong> - Push notifications</span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
 
         <div class="h-px bg-gray-200 my-10"></div>
 
@@ -301,7 +408,7 @@
               class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition duration-300 relative border border-gray-200"
             >
               <h4 class="text-2xl font-semibold mb-3 text-gray-900">
-                BIMS – Property Management System
+                BIMS - Property Management System
               </h4>
               <p class="font-semibold mb-3 text-gray-500">
                 Laravel + CodeIgniter
@@ -327,7 +434,7 @@
               class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition duration-300 relative border border-gray-200"
             >
               <h4 class="text-2xl font-semibold mb-3 text-gray-900">
-                Artchain – QR Payment System
+                Artchain - QR Payment System
               </h4>
               <p class="font-semibold mb-3 text-gray-500">Laravel</p>
               <ul
@@ -353,7 +460,7 @@
               class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition duration-300 relative border border-gray-200"
             >
               <h4 class="text-2xl font-semibold mb-3 text-gray-900">
-                CI Platform – Multi-Step Platform
+                CI Platform - Multi-Step Platform
               </h4>
               <p class="font-semibold mb-3 text-gray-500">Laravel + React</p>
               <ul
@@ -390,10 +497,10 @@
               class="relative bg-white p-6 rounded-xl shadow-lg border border-gray-200"
             >
               <h4 class="text-2xl font-semibold text-primary-color mb-1">
-                Software Engineer – Tatvasoft
+                Software Engineer - Tatvasoft
               </h4>
               <time class="block mb-4 text-gray-600 font-semibold"
-                >June 2023 – Oct 2025</time
+                >Jan 2023 - Oct 2025</time
               >
               <ul
                 class="list-disc ml-6 text-gray-700 leading-relaxed space-y-2"
@@ -422,6 +529,31 @@
 
         <div class="h-px bg-gray-200 my-10"></div>
 
+        <section id="education" class="mb-20 pt-16 -mt-16 max-w-4xl mx-auto">
+          <h3
+            class="text-4xl font-bold mb-12 border-b-4 border-primary-color text-gray-900 inline-block pb-2"
+          >
+            Education
+          </h3>
+
+          <article
+            class="bg-white p-6 rounded-xl shadow-lg border border-gray-200"
+          >
+            <h4 class="text-2xl font-semibold text-primary-color mb-1">
+              Bachelor of Engineering (Information Technology)
+            </h4>
+            <p class="text-gray-700 font-medium">
+              Gujarat Technological University (GTU)
+            </p>
+            <time class="block mt-2 text-gray-600 font-semibold">
+              2019 – 2023
+            </time>
+          </article>
+        </section>
+
+
+        <div class="h-px bg-gray-200 my-10"></div>
+
         <section id="contact" class="pt-16 -mt-16">
           <div
             class="bg-white text-gray-900 rounded-xl p-12 text-center max-w-4xl mx-auto shadow-xl border border-gray-200"
@@ -439,19 +571,22 @@
                 >
               </p>
               <p class="text-xl font-medium">
-                Phone:
+                LinkedIn:
                 <a
-                  href="tel:+917435991877"
+                  href="https://www.linkedin.com/in/gondaliya-trusha-8851571b0"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   class="underline hover:text-primary-color transition"
-                  >+91 7435991877</a
                 >
+                  LinkedIn Profile
+                </a>
               </p>
             </div>
             <a
               href="Trusha_Gondaliya_Laravel_SE.pdf"
               target="_blank"
               download
-              class="inline-block bg-white text-primary-color border border-primary-color px-10 py-4 rounded-full font-bold hover:bg-indigo-50 transition shadow-lg"
+              class="primary-btn"
               >Download Full Resume</a
             >
           </div>
@@ -488,7 +623,7 @@
           });
         },
         {
-          rootMargin: "-30% 0% -60% 0%",
+          rootMargin: "-30% 0% -40% 0%",
         }
       );
 
